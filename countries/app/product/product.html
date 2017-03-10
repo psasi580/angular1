@@ -1,0 +1,35 @@
+
+<div ng-controller="productCtrl">
+    <h1>Products</h1>
+      <label >Countries</label>
+        
+            <select name=selectedCountry ng-model="user.selectedCountry"  ng-options ="data.name for data in countries"
+              ng-change="display(user.selectedCountry)" > 
+                    
+                <option value="" >select</option>
+            </select><br>
+           
+        <label >state</label>
+        
+            <select  ng-model="user.selectedStates" name="selectedStates"
+                    ng-options =" states.name for states in states" 
+                     ng-change="displayCities(user.selectedStates)" >
+                    
+                <option value="">Please Select</option>
+            </select><br>
+         <label >City</label>
+        
+            <select name="selectedCity" ng-model="user.selectedCity" ng-options="city.name for city in cities"
+             ng-change="getCity(user.selectedCity)" >
+                    
+                <option value="">Please Select</option>
+            </select>
+        
+            <br>
+          country {{selecteduser.country}}<br/>
+          state   {{selecteduser.state}}<br/>
+          city    {{selecteduser.city}}<br/>
+          City Code:{{selecteduser.cityCode}}
+   
+        
+</div>

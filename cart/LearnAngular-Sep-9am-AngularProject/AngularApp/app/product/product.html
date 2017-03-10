@@ -1,0 +1,38 @@
+<div ng-controller="productCtrl">
+    <h1>Products</h1>
+    <h1>{{$scope.counter}}</h1>
+   
+        <style>
+    td {
+        text-align: left;
+}
+    td img {
+        height: 150;
+        width: 100;  
+    }
+</style>
+    
+    <table class="table table-striped">
+    
+
+        <tr>
+            <td>S.No</td>
+            <td>image</td>
+            <td>Model Name</td>
+            <td>featureList</td>
+            <td>Price</td>
+        </tr>
+        <tr ng-repeat="product in products">
+            <td>{{$index+1}}</td>
+            <td><img ng-src="{{product.imageUrl}}"/></td>
+            <td>{{product.modelName}}</td>
+            <td> {{product.featureList}}</td>
+            <td>{{product.modelPrice}}</td>
+
+            <td>
+                <button class="btn btn-primary" ng-if="!product.selected" ng-click="addToCart(product)">Add To Cart</button>
+                <button class="btn btn-warning" ng-if="product.selected" ng-click="removeFromCart(product)">Remove From Cart</button>
+            </td>
+        </tr>
+    </table>
+</div>
